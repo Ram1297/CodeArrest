@@ -11,6 +11,7 @@ import android.util.Log;
 import android.util.SparseArray;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,7 +28,8 @@ import java.io.File;
 public class ForwardImage extends AppCompatActivity {
 
     ImageView imageView;
-    TextView textView;
+    EditText textView;
+    TextView textView3;
     Button convertOrCompile;
     String path;
     Boolean convert = true;
@@ -43,9 +45,10 @@ public class ForwardImage extends AppCompatActivity {
         file = new File(path);
         Log.i("Path" ,path);
         imageView = (ImageView)findViewById(R.id.imageView);
-        textView = (TextView) findViewById(R.id.textView);
+        textView = (EditText) findViewById(R.id.textView);
+        textView3 = (TextView) findViewById(R.id.textView3);
         imageView.setImageBitmap(decodeSampledBitmapFromFile(file.getAbsolutePath()));
-        convertOrCompile = (Button) findViewById(R.id.convertOrCompile);
+        convertOrCompile = (Button) findViewById(R.id.convert);
         convertOrCompile.setText("Convert");
     }
 
@@ -89,6 +92,7 @@ public class ForwardImage extends AppCompatActivity {
             imageView.setVisibility(View.INVISIBLE);
             convert = false;
             convertOrCompile.setText("Compile");
+            textView3.setVisibility(View.VISIBLE);
         }
         else
         {

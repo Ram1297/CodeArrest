@@ -24,6 +24,8 @@
         <activity android:name=".PreviewClass"
             android:theme="@style/Theme.AppCompat.NoActionBar"/>
         <activity android:name=".ForwardImage" android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+        <activity android:name=".ShowImages"></activity>
+        <activity android:name=".Editable"></activity>
         <meta-data android:name="com.google.android.gms.vision.DEPENDENCIES" android:value="orc"></meta-data>
     </application>
 

@@ -8,19 +8,19 @@
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
-        android:layout_height="500dp"></FrameLayout>
+        android:layout_height="match_parent"></FrameLayout>
 
     <ImageButton
         android:id="@+id/click"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_alignParentBottom="true"
+        android:layout_alignTop="@id/frameLayout"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="20dp"
         android:background="@android:color/transparent"
         android:onClick="takePicture"
-        android:scaleType="fitXY"
-        android:src="@drawable/click" />
+        android:scaleType="fitEnd" />
 
 
 </RelativeLayout>

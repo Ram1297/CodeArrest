@@ -32,6 +32,7 @@ public class ShowCam extends SurfaceView implements SurfaceHolder.Callback
     public void surfaceCreated(SurfaceHolder holder) {
 
         Camera.Parameters parameters = camera.getParameters();
+        parameters.setFocusMode(Camera.Parameters.FOCUS_MODE_AUTO);
 
         //Get maximum resolution
 

@@ -6,46 +6,93 @@
     android:layout_height="match_parent"
     tools:context="com.example.ram.codearrest.MainActivity">
 
+        <ImageButton
+            android:id="@+id/capture"
+            style="@style/Widget.AppCompat.ImageButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="40dp"
+            android:background="@android:color/transparent"
+            android:onClick="capture"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/capture" />
 
-    <ImageButton
-        android:id="@+id/capture"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/imp"
-        android:layout_marginEnd="18dp"
-        android:background="@android:color/transparent"
-        android:onClick="capture"
-        android:scaleType="fitXY"
-        app:srcCompat="@drawable/capture" />
+        <ImageButton
+            android:id="@+id/compile"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="215dp"
+            android:background="@android:color/transparent"
+            android:onClick="gotoListView"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/compile" />
 
-    <ListView
-        android:id="@+id/listView"
-        android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/textView2" />
+        <ImageButton
+            android:id="@+id/edit"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="385dp"
+            android:background="@android:color/transparent"
+            android:onClick="writeCode"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/edit" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="11dp"
-        android:text="Recent Captures"
-        android:textSize="18sp" />
+        <TextView
+            android:id="@+id/captureTextView"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_alignStart="@+id/capture"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="45dp"
+            android:gravity="center"
+            android:text="----------Capture an Image------------"
+            android:textStyle="italic" />
 
-    <ImageButton
-        android:id="@+id/imp"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="14dp"
-        android:layout_marginStart="16dp"
-        android:background="@android:color/transparent"
-        android:scaleType="fitXY"
-        android:src="@drawable/imports" />
+        <TextView
+            android:id="@+id/compileTextView"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="125dp"
+            android:layout_marginTop="215dp"
+            android:gravity="center"
+            android:text="---------Compile an Image---------"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/editTextView"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="125dp"
+            android:layout_marginTop="380dp"
+            android:gravity="center"
+            android:text="-------------Write code--------------" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="40dp"
+            android:layout_height="75dp"
+            android:layout_alignStart="@+id/capture"
+            android:layout_below="@+id/capture"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/next" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="40dp"
+            android:layout_height="75dp"
+            android:layout_alignStart="@+id/compile"
+            android:layout_below="@+id/compile"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/next" />
+
 
 </RelativeLayout>

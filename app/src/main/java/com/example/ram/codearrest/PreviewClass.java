@@ -25,14 +25,19 @@ public class PreviewClass extends AppCompatActivity {
     FrameLayout frameLayout;
     Camera camera;
     ShowCam showCamera;
-    MainActivity refreshing;
 
 
     public void takePicture(View view)
     {
         if (camera != null)
         {
-            camera.takePicture(null,null,mPictureCallback);
+            camera.autoFocus(new Camera.AutoFocusCallback() {
+                @Override
+                public void onAutoFocus(boolean success, Camera camera) {
+                    if (success)
+                        camera.takePicture(null,null,mPictureCallback);
+                }
+            });
         }
     }
 
@@ -56,11 +61,11 @@ public class PreviewClass extends AppCompatActivity {
 
                         try {
                             FileOutputStream fileOutputStream = new FileOutputStream(file);
-                            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fileOutputStream);
+                            bitmap.compress(Bitmap.CompressFormat.JPEG, 90, fileOutputStream);
 
                             fileOutputStream.flush();
                             fileOutputStream.close();
-                            refreshing.viewable();
+                            //refreshing.viewable();
 
                         } catch (IOException e) {
                             e.printStackTrace();
@@ -81,7 +86,7 @@ public class PreviewClass extends AppCompatActivity {
 
         click = (ImageButton) findViewById(R.id.click);
         frameLayout = (FrameLayout) findViewById(R.id.frameLayout);
-        imports = (ImageButton) findViewById(R.id.imp);
+        //imports = (ImageButton) findViewById(R.id.imp);
 
         //Open Camera
         camera = Camera.open();
